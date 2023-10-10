@@ -12,7 +12,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			characters: [],
+			urlBase:"https://www.swapi.tech/api"
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,9 +39,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getCharcters: async () =>{
+                const store = getStore()
+				try {
+					let response = await fetch(`${store.urlBase}/people`)
+					let data = await response.json()
+					console.log(data.results)
+
+					for ( let person of data.results){
+                          let responseTwo  = await fetch (person.url)
+						  let dataTwo = await responseTwo.json()
+						  setStore({
+							characters: [...store.characters, dataTwo.result]
+						  })
+					}
+
+					console.log(data)
+
+				} catch (error) {
+					console.log(error)
+				}
+			}
+
 			}
 		}
 	};
-};
 
 export default getState;
