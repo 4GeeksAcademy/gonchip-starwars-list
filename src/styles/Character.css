@@ -1,0 +1,9 @@
+.card-character-container {
+    display: flex;
+  }
+  
+  .card-character {
+    margin: 10px;
+    width: 18rem;
+  }
+  

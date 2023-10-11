@@ -14,7 +14,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			],
 			characters: [],
-			urlBase:"https://www.swapi.tech/api"
+			people : [],
+			// character : {},
+			planets : [],
+			planetdetail : {},
+			vehicles : [],
+			vehicledetail : {},
+			favorites :[],
+			
+		
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -43,19 +51,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getCharcters: async () =>{
                 const store = getStore()
 				try {
-					let response = await fetch(`${store.urlBase}/people`)
+					let response = await fetch("https://www.swapi.tech/api/people")
 					let data = await response.json()
-					console.log(data.results)
+					let person = await data.results
 
-					for ( let person of data.results){
-                          let responseTwo  = await fetch (person.url)
-						  let dataTwo = await responseTwo.json()
-						  setStore({
-							characters: [...store.characters, dataTwo.result]
-						  })
-					}
-
-					console.log(data)
+					      characters.forEach (element => {
+							fetch(element.url)
+							.then(res => res.json())
+							.then(data => {
+								data.result = {
+									...data.result, 
+									nature : "details"
+								}
+								setStore({
+									people : [...store.people, data.result]
+								})
+							})
+						});
 
 				} catch (error) {
 					console.log(error)

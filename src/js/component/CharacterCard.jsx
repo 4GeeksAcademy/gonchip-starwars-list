@@ -1,23 +1,35 @@
 import React from "react";
+import { useContext } from 'react'
+import { Context } from '../store/appContext'
+import { Link } from 'react-router-dom'
+import './CardPeople.css';
 
 const CharacterCard = () => {
-    return(
-        <div className="my-card">
-        <img src="..." alt="..." />
-        <div className= "p-3">
-            <h3>gonchip</h3>
+    const { store, actions } = useContext(Context)
 
-
-            <p>Gender:</p>
-            <p>Hair Color:</p>
-            <p>Eye_Color:</p>
+    return (
+        <div className='card-character-container'>
+            {store.people.map((p) => {
+                return (
+                    <div key={p?.uid} className="card">
+                        <img src={`https://starwars-visualguide.com/assets/img/characters/${p?.uid}.jpg`} className="card-img-top"/>
+                        <div className="card-body">
+                            <h5 className="card-title">{p?.properties?.name}</h5>
+                            <div className="card-text">
+                                <p>Gender: {p?.properties?.gender}</p>
+                                <p>Hair Color: {p?.properties?.hair_color}</p>
+                                <p>Eye-Color: {p?.properties?.eye_color}</p>
+                            </div>
+                            <div className='d-flex justify-content-between my-1'>
+                                <Link to={`/details/${p?.uid}`} className="btn btn-primary">Learn More!</Link>
+                                <button onClick={() => actions.addToFav(p)} className='btn btn-warning'><i className="fa-solid fa-star"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
-        <div className="d-flex justify-content-between p-3">
-            <button className="btn btn-primary"> Learn More</button>
-            <button className="btn btn-warning"> Learn More</button>
-        </div>		
-    </div>
-    )
+    );
 }
 
-export default CharacterCard
+export default CharacterCard;

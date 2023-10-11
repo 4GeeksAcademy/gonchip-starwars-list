@@ -1,0 +1,45 @@
+.favorite-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  favorite-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  favorite-button:hover {
+    background-color: #0056b3;
+  }
+  
+  favorite-dropdown {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    top: 100%;
+    text-align: left;
+  }
+  
+  favorite-dropdown a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  favorite-dropdown a:hover {
+    background-color: #f2f2f2;
+  }
+  
+  delete-favorite-button {
+    color: red;
+    cursor: pointer;
+  }
+  

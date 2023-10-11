@@ -1,0 +1,8 @@
+.vehicles-card-container {
+    display: flex;
+  }
+  
+  .vehicle-card {
+    margin: 10px;
+    width: 18rem;
+  }
