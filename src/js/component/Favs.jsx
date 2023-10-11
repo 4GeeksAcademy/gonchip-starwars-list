@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import './Favs.css'; 
+import '../../styles/Favs.css'; 
 
 const Favs = () => {
     const { store, actions } = useContext(Context);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    }
 
     return (
         <>
@@ -14,7 +19,7 @@ const Favs = () => {
                     Favorites
                     <span> {store.favorites.length}</span>
                 </button>
-                <ul className="favorite-dropdown" id="favorite-dropdown">
+                <ul className={isDropdownOpen ? "favorite-dropdown open" : "favorite-dropdown"}>
                     {store.favorites.map((fav) => {
                         return (
                             <li key={fav.uid} className="d-flex justify-content-between">

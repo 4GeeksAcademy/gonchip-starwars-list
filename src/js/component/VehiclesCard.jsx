@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
 import { Link } from 'react-router-dom';
-import './Vehicles.css'; 
+import '../../styles/Vehicles.css'; 
 
 const VehiclesCard = () => {
     const { store, actions } = useContext(Context);

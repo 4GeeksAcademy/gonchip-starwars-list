@@ -1,0 +1,43 @@
+.planet-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .planet-card {
+    max-width: 1000px;
+  }
+  
+  .planet-card-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .planet-card-title {
+    font-size: 24px;
+  }
+  
+  .planet-card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .detail-divider {
+    display: flex;
+    flex-direction: column;
+    color: red;
+  }
+  
+  .detail-row {
+    display: flex;
+    margin: 0.2rem;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    margin: 0.2rem;
+  }
+  
+  .detail-value {
+    margin: 0.2rem;
+  }
+  

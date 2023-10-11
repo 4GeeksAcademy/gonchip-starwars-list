@@ -1,0 +1,43 @@
+.vehicles-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .vehicles-card {
+    max-width: 1400px;
+  }
+  
+  .vehicles-card-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .vehicles-card-title {
+    font-size: 24px;
+  }
+  
+  .vehicles-card-text {
+    margin-bottom: 1rem;
+  }
+  
+  .detail-divider {
+    display: flex;
+    flex-direction: column;
+    color: red;
+  }
+  
+  .detail-row {
+    display: flex;
+    margin: 0.2rem;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    margin: 0.2rem;
+  }
+  
+  .detail-value {
+    margin: 0.2rem;
+  }
+  

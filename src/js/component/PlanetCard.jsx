@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from 'react'
 import { Context } from '../store/appContext'
 import { Link } from 'react-router-dom'
-import './PlanetCard.css';
+import '../../styles/PlanetsCard.css';
 
 const PlanetCard = () => {
     const {store, actions} = useContext(Context)

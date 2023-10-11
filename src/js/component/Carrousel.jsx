@@ -1,23 +1,23 @@
 import React from "react";
-import CardPeople from './CardPeople.jsx';
-import CardPlanets from "./CardPlanets.jsx";
-import CardVehicles from "./CardVehicles.jsx";
-import './Carrousel.css'; // Import the CSS file
+import CharacterCard from './CharacterCard.jsx';
+import PlanetCard from "./PlanetCard.jsx";
+import VehiclesCard from "./VehiclesCard.jsx";
+import '../../styles/Carrousel.css'; 
 
 const Carrousel = () => {
     return (
         <div className="carrousel-container">
             <h1>Characters</h1>
             <div className="container d-flex carrousel my-4">
-                <CardPeople/>
+                <CharacterCard/>
             </div>
             <h1>Planets</h1>
             <div className="container d-flex carrousel">
-                <CardPlanets/>
+                <PlanetCard/>
             </div>
             <h1>Vehicles</h1>
             <div className="container d-flex carrousel">
-                <CardVehicles/>
+                <VehiclesCard/>
             </div>
         </div>
     );

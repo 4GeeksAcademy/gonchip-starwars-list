@@ -1,0 +1,9 @@
+.carrousel {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 15px;
+  }
+
+  .detail-divider{
+    border-top: 1px solid red;
+  }

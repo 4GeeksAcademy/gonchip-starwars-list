@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from 'react'
 import { Context } from '../store/appContext'
 import { Link } from 'react-router-dom'
-import './CardPeople.css';
+import '../../styles/Characters.css';
 
 const CharacterCard = () => {
     const { store, actions } = useContext(Context)
