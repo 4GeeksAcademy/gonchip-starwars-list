@@ -5,4 +5,5 @@
   .planet-card {
     margin: 10px;
     width: 18rem;
+    border: 1px solid #ccc;
   }

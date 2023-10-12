@@ -13,27 +13,42 @@ const Favs = () => {
     }
 
     return (
-        <>
-            <div className="favorite-container">
-                <button className="favorite-button" onClick={toggleDropdown}>
+        <div className="favorite-container">
+            <div className="button-group">
+                <button
+                    type="button"
+                    className="btn btn-secondary dropdown-toggle"
+                    onClick={toggleDropdown}
+                >
                     Favorites
                     <span> {store.favorites.length}</span>
                 </button>
-                <ul className={isDropdownOpen ? "favorite-dropdown open" : "favorite-dropdown"}>
+                <ul
+                    className={isDropdownOpen ? "dropdown-menu show" : "dropdown-menu"}
+                >
                     {store.favorites.map((fav) => {
                         return (
-                            <li key={fav.uid} className="d-flex justify-content-between">
-                                <Link className="dropdown-item" to={`/${fav.nature}/${fav.uid}`}>{fav?.properties?.name}</Link>
-                                <button className="delete-favorite-button" onClick={() => actions.deleteFav(fav._id)}>
+                            <li key={fav.uid}>
+                                <Link
+                                    className="dropdown-item"
+                                    to={`/${fav.nature}/${fav.uid}`}
+                                >
+                                    {fav?.properties?.name}
+                                
+                                <button
+                                    className="dropdown-item delete-favorite-button"
+                                    onClick={() => actions.deleteFav(fav._id)}
+                                >
                                     <i className="fa-solid fa-trash"></i>
                                 </button>
+                                </Link>
                             </li>
-                        )
+                        );
                     })}
                 </ul>
             </div>
-        </>
-    )
+        </div>
+    );
 }
 
 export default Favs;
