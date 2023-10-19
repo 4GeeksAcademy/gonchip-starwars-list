@@ -11,7 +11,7 @@ const CharacterCard = () => {
         <div className='card-character-container'>
             {store.people.map((p) => {
                 return (
-                    <div key={p?.uid} className="card">
+                    <div key={p?.uid} className="card-character">
                         <img src={`https://starwars-visualguide.com/assets/img/characters/${p?.uid}.jpg`} className="card-img-top"/>
                         <div className="card-body">
                             <h5 className="card-title">{p?.properties?.name}</h5>
@@ -21,7 +21,7 @@ const CharacterCard = () => {
                                 <p>Eye-Color: {p?.properties?.eye_color}</p>
                             </div>
                             <div className='d-flex justify-content-between my-1'>
-                                <Link to={`/details/${p?.uid}`} className="btn btn-primary">Learn More!</Link>
+                                <Link to={`/person/${p?.uid}`} className="btn btn-primary">Learn More!</Link>
                                 <button onClick={() => actions.addToFav(p)} className='btn btn-warning'><i className="fa-solid fa-star"></i></button>
                             </div>
                         </div>

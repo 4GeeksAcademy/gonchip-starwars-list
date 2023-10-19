@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
-import '../../styles/Favs.css'; 
+import '../../styles/Favs.css';
 
 const Favs = () => {
     const { store, actions } = useContext(Context);
@@ -13,42 +13,43 @@ const Favs = () => {
     }
 
     return (
-        <div className="favorite-container">
-            <div className="button-group">
+             <div className="logo d-flex justify-content-center p-4">
                 <button
                     type="button"
-                    className="btn btn-secondary dropdown-toggle"
+                    className="btn btn-warning dropdown-toggle"
                     onClick={toggleDropdown}
                 >
                     Favorites
                     <span> {store.favorites.length}</span>
                 </button>
                 <ul
-                    className={isDropdownOpen ? "dropdown-menu show" : "dropdown-menu"}
+                    className={isDropdownOpen ? "dropdown-menu show" : "dropdown-menu"} 
                 >
-                    {store.favorites.map((fav) => {
-                        return (
-                            <li key={fav.uid}>
+                   {store.favorites.length === 0 ? (
+                    <li className="dropdown-item">No hay favoritos</li>
+                ) : 
+                    (store.favorites.map((fav) => (
+                            <li key={fav.uid} className="d-flex justify-content-between">
                                 <Link
                                     className="dropdown-item"
                                     to={`/${fav.nature}/${fav.uid}`}
                                 >
                                     {fav?.properties?.name}
-                                
-                                <button
-                                    className="dropdown-item delete-favorite-button"
+                                 
+                                </Link>
+
+                                  <button
+                                    className="dropdown-item delete-favorite-button ml-auto"
                                     onClick={() => actions.deleteFav(fav._id)}
                                 >
                                     <i className="fa-solid fa-trash"></i>
                                 </button>
-                                </Link>
+                               
                             </li>
-                        );
-                    })}
-                </ul>
-            </div>
-        </div>
-    );
-}
-
+                        ))
+                        )}
+                    </ul>
+                </div>
+            );
+        }
 export default Favs;

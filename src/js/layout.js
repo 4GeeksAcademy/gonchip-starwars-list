@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Home } from "./views/home";
-import Data from "./views/Data.jsx";
+import PersonData from "./views/PersonData.jsx";
 import  PlanetsData  from "./views/PlanetsData.jsx";
 import VehiclesData from "./views/VehiclesData.jsx";
 import injectContext from "./store/appContext";
@@ -20,10 +20,10 @@ const Layout = () => {
 				<Navbar />
 				<Routes>
 					<Route path="/" element={<Home />} />
-					<Route path="/data/:id" element={<Data />} />
+					<Route path="/person/:id" element={<PersonData />} />
 					<Route path="/planets/:id" element={<PlanetsData />} />
 					<Route path="/vehicles/:id" element={<VehiclesData />} />
-					<Route path="*" element={<h1>Not found!</h1>} />
+					{/* <Route path="*" element={<h1>Not found!</h1>} /> */}
 				</Routes>
 			</BrowserRouter>
 		</div>

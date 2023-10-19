@@ -1,6 +1,6 @@
 .favorite-container {
     display: flex;
-    justify-content: flex-end; /* Alinea el contenido al extremo derecho */
+    justify-content: flex-end; 
     align-items: center
   }
   
@@ -43,4 +43,3 @@
     color: red;
     cursor: pointer;
   }
-  

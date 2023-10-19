@@ -4,14 +4,14 @@ import { useContext } from "react";
 import { Context } from "../store/appContext";
 import '../../styles/Data.css'; 
 
-const Data = () => {
-    const { id } = useParams()
+const DataPerson = () => {
+    let { id } = useParams()
     const { store, actions } = useContext(Context)
     const [detailPerson, setDetailPerson] = useState({})
     useEffect(() => {
-        actions.getCharacter(id)
-        setDetailPerson(store.character)
-    }, [store.character])
+        actions.getPeople
+        setDetailPerson(store.detailPerson)
+    }, [store.detailPerson])
 
     return (
         <>
@@ -62,4 +62,4 @@ const Data = () => {
     )
 }
 
-export default Data;
+export default DataPerson;
