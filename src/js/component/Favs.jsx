@@ -22,9 +22,12 @@ const Favs = () => {
                     Favorites
                     <span> {store.favorites.length}</span>
                 </button>
-                <ul
-                    className={isDropdownOpen ? "dropdown-menu show" : "dropdown-menu"} 
+                <ul 
+                    className={isDropdownOpen ? "dropdown-menu show"  : "dropdown-menu"} 
+        
                 >
+                    
+
                    {store.favorites.length === 0 ? (
                     <li className="dropdown-item">No hay favoritos</li>
                 ) : 
