@@ -13,9 +13,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			characters: [],
-			people: [],
-			// character : {},
+			character: [],
+		    person: [],
+			people: [], 
 			planets: [],
 			planetdetail: {},
 			vehicles: [],
@@ -74,12 +74,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
-			getPeople: (id) => {
-				fetch(`https://www.swapi.tech/api/people/${id}`)
+			getPerson: (id) => {
+				fetch(`https://www.swapi.tech/api/person/${id}`)
 					.then(res => res.json())
 					.then(data => {
 						setStore({
-							people: data.result
+							persondetail: data.result
 						})
 					})
 			},
