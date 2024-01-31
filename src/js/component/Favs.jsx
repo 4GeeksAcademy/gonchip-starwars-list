@@ -35,7 +35,7 @@ const Favs = () => {
                             <li key={fav.uid} className="d-flex justify-content-between">
                                 <Link
                                     className="dropdown-item"
-                                    to={`/${fav.nature}/${fav.uid}`}
+                                    to={`/person/${fav.uid}`}
                                 >
                                     {fav?.properties?.name}
                                  
